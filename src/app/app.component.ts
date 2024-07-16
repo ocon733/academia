@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'academia';
+  title = 'Cursos disponibles';
+  cursos:string[] = ["Java","JavaScript","Python","C#","Visual Basic"];
+  abierto:boolean = false;
+
+  nombres?:string[] = [];
+
+  abrircursos():void{
+    this.abierto = !this.abierto;
+  }
 }
